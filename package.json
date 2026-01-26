@@ -5,10 +5,10 @@
   "license": "ISC",
   "author": "developerzaid",
   "type": "commonjs",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "dependencies": {
     "cors": "^2.8.6",

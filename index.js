@@ -2,8 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors =  require("cors");
-const clientPromise = require("./lib/mongodb.js");
-const router = require("./Routes/mainroute.js");
+const clientPromise = require("./src/lib/mongodb.js");
+const router = require("./src/Routes/mainroute.js");
 
 const app = express();
 app.use(cors());
