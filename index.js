@@ -10,10 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 app.use(
-  "/Public",
-  express.static(path.join(__dirname, "Public"))
+  express.static(path.join(__dirname, "src/Public"))
 );
 
+
+console.log(path.join(__dirname, "src/Public"))
 app.get("/", (req, res) => {
   res.send("Backend running ✅");
 });
