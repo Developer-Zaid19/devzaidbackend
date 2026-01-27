@@ -45,6 +45,7 @@ const postblog = async (req, res) => {
 
     console.log("Current Date:", formattedDate);
     console.log("Random Number (0-9):", randomNumber);
+    console.log("body ka data:", req.body);
 
     if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
       res.status(502).json({ error: "password doesn't match" })
