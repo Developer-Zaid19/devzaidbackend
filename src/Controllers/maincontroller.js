@@ -39,15 +39,22 @@ const postblog = async (req, res) => {
     const client = await clientPromise;
     const db = client.db("developerzaid");
 
+    const today = new Date();
+    const formattedDate = today.toISOString().split('T')[0];
+    const randomNumber = Math.floor(Math.random() * 10);
+
+    console.log("Current Date:", formattedDate);
+    console.log("Random Number (0-9):", randomNumber);
+
     if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
       res.status(502).json({ error: "password doesn't match" })
     }
     else {
       const blogcontent = {
-        "id": req.body.id,
+        "id": randomNumber,
         "title": req.body.title,
         "slug": req.body.slug,
-        "date": req.body.date,
+        "date": formattedDate,
         "description": req.body.description,
         "content": req.body.content,
         "para1": req.body.para1,
