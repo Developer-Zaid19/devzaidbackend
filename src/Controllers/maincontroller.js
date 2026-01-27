@@ -49,6 +49,7 @@ const postblog = async (req, res) => {
     console.log("verify pass:", process.env.VERIFY_PASS);
 
     if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
+      console.log("bheja hua pass: ", req.body.verifypass, "env wala pass: ", process.env.VERIFY_PASS)
       res.status(502).json({ error: "password doesn't match" })
     }
     else {
