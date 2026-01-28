@@ -17,8 +17,6 @@ const getblog = async (req, res) => {
 const getBlogBySlug = async (req, res) => {
   try {
     const { blogslug } = req.params;
-    console.log("request giri aur slug mila")
-    console.log(blogslug)
     const client = await clientPromise;
     const db = client.db("developerzaid");
 

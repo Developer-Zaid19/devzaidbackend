@@ -14,7 +14,7 @@ app.use(
 );
 
 
-console.log(path.join(__dirname, "src/Public"))
+console.log("server pe request giri sir !")
 app.get("/", (req, res) => {
   res.send("Backend running ✅");
 });
