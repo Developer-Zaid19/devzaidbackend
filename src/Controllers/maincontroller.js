@@ -43,13 +43,7 @@ const postblog = async (req, res) => {
     const formattedDate = today.toISOString().split('T')[0];
     const randomNumber = Math.floor(Math.random() * 10);
 
-    console.log("Current Date:", formattedDate);
-    console.log("Random Number (0-9):", randomNumber);
-    console.log("body ka data:", req.body);
-    console.log("verify pass:", process.env.VERIFY_PASS);
-
-    if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
-      console.log("bheja hua pass: ", req.body.verifypass, "env wala pass: ", process.env.VERIFY_PASS)
+    if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
       res.status(502).json({ error: "password doesn't match" })
     }
     else {
