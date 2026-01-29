@@ -1,5 +1,8 @@
 require("dotenv").config();
 const clientPromise = require("../lib/mongodb");
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
 
 
 const getblog = async (req, res) => {
@@ -42,8 +45,8 @@ const postblog = async (req, res) => {
     const randomNumber = Math.floor(Math.random() * 10);
 
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
-      res.status(502).json({ error: "password doesn't match" })
-      console.log("mila hua pass:", req.body.verifypass, "env eala pass:",process.env.VERIFY_PASS )
+      console.log("mila hua pass:", req.body.verifypass, "env eala pass:", process.env.VERIFY_PASS)
+     return  res.status(502).json({ error: "password doesn't match" })
     }
     else {
       const blogcontent = {
@@ -71,16 +74,16 @@ const postnotes = async (req, res) => {
   try {
     const client = await clientPromise;
     const db = client.db("developerzaid");
+    const randomNumber = Math.floor(Math.random() * 10);
 
     if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
-      res.status(502).json({ error: "password doesn't match" })
+     return  res.status(502).json({ error: "password doesn't match" })
     }
     else {
       const notescontent = {
-
-        "id": req.body.id,
+        "id": randomNumber,
         "title": req.body.title,
-        "file": req.body.file,
+        "file": req.file.filename,
         "category": req.body.category
 
       }
