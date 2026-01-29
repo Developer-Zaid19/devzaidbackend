@@ -72,7 +72,6 @@ const postblog = async (req, res) => {
 
 const postnotes = async (req, res) => {
   try {
-    console.log("notes wale jason me request giri")
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const randomNumber = Math.floor(Math.random() * 10);
