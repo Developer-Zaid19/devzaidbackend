@@ -24,7 +24,7 @@ const getBlogBySlug = async (req, res) => {
     const client = await clientPromise;
     const db = client.db("developerzaid");
 
-    const blog = await db.collection("blogs").findOne({ slug: blogslug });
+    const blog = await db.collection("blogs").findOne({ id: blogslug });
 
     if (!blog) {
       return res.status(404).json({ message: "Blog not found" });
