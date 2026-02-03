@@ -1,5 +1,6 @@
 require("dotenv").config();
 const clientPromise = require("../lib/mongodb");
+const supabase = require("../lib/supabase");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
@@ -37,22 +38,24 @@ const getBlogBySlug = async (req, res) => {
 
 const postblog = async (req, res) => {
   try {
-    const client = await clientPromise;
-    const db = client.db("developerzaid");
-
-    const today = new Date();
-    const formattedDate = today.toISOString().split('T')[0];
-    const randomNumber = Math.floor(Math.random() * 10);
-
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
       console.log("mila hua pass:", req.body.verifypass, "env eala pass:", process.env.VERIFY_PASS)
-     return  res.status(502).json({ error: "password doesn't match" })
+      return res.status(502).json({ error: "password doesn't match" })
     }
-    else {
+    const client = await clientPromise;
+    const db = client.db("developerzaid");
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0];
+    const hh = String(today.getHours()).padStart(2, '0');
+    const mm = String(today.getMinutes()).padStart(2, '0');
+    const ss = String(today.getSeconds()).padStart(2, '0');
+
+    const slug =
+      req.body.title.replaceAll(" ", "-").toLowerCase() + "-" + formattedDate + "-" + hh + mm + ss;
+
       const blogcontent = {
-        "id": randomNumber,
+        "id": slug,
         "title": req.body.title,
-        "slug": req.body.slug,
         "date": formattedDate,
         "description": req.body.description,
         "content": req.body.content,
@@ -62,7 +65,6 @@ const postblog = async (req, res) => {
       }
       const result = await db.collection("blogs").insertOne(blogcontent);
       res.json({ success: true, result });
-    }
 
 
   } catch (err) {
@@ -72,31 +74,60 @@ const postblog = async (req, res) => {
 
 const postnotes = async (req, res) => {
   try {
+    if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+      return res.status(401).json({ error: "password doesn't match" });
+    }
+
+    if (!req.file) {
+      return res.status(400).json({ error: "PDF file is required" });
+    }
+
+    const today = new Date();
+    const formattedDate = today.toISOString().split("T")[0];
+    const hh = String(today.getHours()).padStart(2, '0');
+    const mm = String(today.getMinutes()).padStart(2, '0');
+    const ss = String(today.getSeconds()).padStart(2, '0');
+
+    const slug =
+      req.body.title.replaceAll(" ", "-").toLowerCase() + "-" + formattedDate + "-" + hh + mm + ss;
+
+    const filePath = `notes/${slug}.pdf`;
+
+    const { error: uploadError } = await supabase.storage
+      .from("pdfs") // bucket name
+      .upload(filePath, req.file.buffer, {
+        contentType: "application/pdf",
+        upsert: false,
+      });
+
+    if (uploadError) {
+      return res.status(500).json({ error: uploadError.message });
+    }
+
     const client = await clientPromise;
     const db = client.db("developerzaid");
-    const randomNumber = Math.floor(Math.random() * 10);
 
-    if (!req.body.verifypass || req.body.verifypass != process.env.VERIFY_PASS) {
-     return  res.status(502).json({ error: "password doesn't match" })
-    }
-    else {
-      const notescontent = {
-        "id": randomNumber,
-        "title": req.body.title,
-        "file": req.file.filename,
-        "category": req.body.category
+    const notescontent = {
+      id: slug,
+      title: req.body.title,
+      file: filePath, // 👈 ab local filename nahi, supabase path
+      category: req.body.category,
+      date: formattedDate,
+    };
 
-      }
-      const result = await db.collection("notes").insertOne(notescontent);
-      res.json({ success: true, result });
-    }
+    const result = await db.collection("notes").insertOne(notescontent);
 
+    res.json({
+      success: true,
+      message: "doc uploaded successfully",
+      result,
+    });
 
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: err.message });
   }
 };
-
 
 const getnotes = async (req, res) => {
   try {
@@ -109,11 +140,52 @@ const getnotes = async (req, res) => {
   }
 }
 
+const downloadnotes = async (req, res) => {
+  try {
+    const noteId = req.params.id;
+
+    // 🔎 MongoDB se note uthao
+    const client = await clientPromise;
+    const db = client.db("developerzaid");
+
+    const note = await db.collection("notes").findOne({ id: noteId });
+
+    if (!note) {
+      return res.status(404).json({ error: "Note not found" });
+    }
+
+    // ⬇️ Supabase se PDF download
+    const { data, error } = await supabase.storage
+      .from("pdfs")
+      .download(note.file);
+
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+
+    // 📄 Headers set karo
+    res.setHeader("Content-Type", "application/pdf");
+    res.setHeader(
+      "Content-Disposition",
+      `inline; filename="${noteId}.pdf"`
+    );
+
+    // 🧠 Stream PDF
+    const buffer = Buffer.from(await data.arrayBuffer());
+    res.send(buffer);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err.message });
+  }
+};
+
 
 module.exports = {
   getblog,
   getnotes,
   getBlogBySlug,
   postblog,
-  postnotes
+  postnotes,
+  downloadnotes
 };
