@@ -39,8 +39,7 @@ const getBlogBySlug = async (req, res) => {
 const postblog = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
-      console.log("mila hua pass:", req.body.verifypass, "env eala pass:", process.env.VERIFY_PASS)
-      return res.status(502).json({ error: "password doesn't match" })
+      return res.status(502).json({ error: "SOME THING WENT WRONG" })
     }
     const client = await clientPromise;
     const db = client.db("developerzaid");
@@ -75,13 +74,12 @@ const postblog = async (req, res) => {
 const postnotes = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
-      return res.status(401).json({ error: "password doesn't match" });
+      return res.status(401).json({ error: "Servent Went Wrong" });
     }
 
     if (!req.file) {
       return res.status(400).json({ error: "PDF file is required" });
     }
-
     const today = new Date();
     const formattedDate = today.toISOString().split("T")[0];
     const hh = String(today.getHours()).padStart(2, '0');
@@ -110,7 +108,7 @@ const postnotes = async (req, res) => {
     const notescontent = {
       id: slug,
       title: req.body.title,
-      file: filePath, // 👈 ab local filename nahi, supabase path
+      file: filePath, 
       category: req.body.category,
       date: formattedDate,
     };
