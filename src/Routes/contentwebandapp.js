@@ -1,9 +1,9 @@
 const express = require("express");
-const { getblog, getnotes, postblog, getBlogBySlug, postnotes, downloadnotes } = require("../Controllers/maincontroller.js");
-const filehandler = require("../middleware/filehandler.js")
+const { getblog, getnotes, postblog, getBlogBySlug, postnotes, downloadnotes } = require("../Controllers/contentwebandapp.js");
 const uploadpdf = require("../middleware/uploadpdf.js")
 
 const router = express.Router();
+
 router.get("/blogs", getblog);
 router.get("/blogs/:blogslug", getBlogBySlug);
 router.get("/notes", getnotes);
