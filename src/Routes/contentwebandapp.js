@@ -4,12 +4,12 @@ const uploadpdf = require("../middleware/uploadpdf.js")
 
 const contentrouter = express.Router();
 
-router.get("/blogs", getblog);
-router.get("/blogs/:blogslug", getBlogBySlug);
-router.get("/notes", getnotes);
-router.get("/notes/:id", downloadnotes);
-router.post("/postblog", postblog);
-router.post("/postnote",
+contentrouter.get("/blogs", getblog);
+contentrouter.get("/blogs/:blogslug", getBlogBySlug);
+contentrouter.get("/notes", getnotes);
+contentrouter.get("/notes/:id", downloadnotes);
+contentrouter.post("/postblog", postblog);
+contentrouter.post("/postnote",
     uploadpdf.single("file"),
     postnotes);
 module.exports = contentrouter;
