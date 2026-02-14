@@ -2,7 +2,7 @@ const express = require("express");
 const { getblog, getnotes, postblog, getBlogBySlug, postnotes, downloadnotes } = require("../Controllers/contentwebandapp.js");
 const uploadpdf = require("../middleware/uploadpdf.js")
 
-const router = express.Router();
+const contentrouter = express.Router();
 
 router.get("/blogs", getblog);
 router.get("/blogs/:blogslug", getBlogBySlug);
@@ -12,4 +12,4 @@ router.post("/postblog", postblog);
 router.post("/postnote",
     uploadpdf.single("file"),
     postnotes);
-module.exports = router;
+module.exports = contentrouter;

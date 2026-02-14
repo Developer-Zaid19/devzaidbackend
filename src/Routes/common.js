@@ -1,5 +1,7 @@
 const express = require("express");
 const Contactform = require("../Controllers/common.js")
-const router = express.Router();
+const commonrouter = express.Router();
 
 router.post("/contactform", Contactform);
+
+module.exports = commonrouter;
