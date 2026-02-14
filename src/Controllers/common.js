@@ -5,11 +5,8 @@ const clientPromise = require("../lib/mongodb");
 const Contactform = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
-      console.log("password galat hai")
-      console.log("realpass", process.env.VERIFY_PASS , "mila hua pass", req.body.verifypass)
       return res.status(502).json({ error: "SOME THING WENT WRONG" })
     }
-    console.log("password sahi hai")
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const today = new Date();
