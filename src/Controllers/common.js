@@ -16,7 +16,7 @@ const Contactform = async (req, res) => {
         type: req.body.type,
         date: formattedDate,
         name: req.body.name,
-        contactdetails: req.body.contactinfo,
+        contactdetails: req.body.email,
         message: req.body.message
       }
       console.log("data aya hai")
