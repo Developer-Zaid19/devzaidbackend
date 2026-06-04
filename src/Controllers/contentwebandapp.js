@@ -4,6 +4,9 @@ const supabase = require("../lib/supabase");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const notes = require("../Public/data/data")
+const projects = require("../Public/data/data")
+const projectslug = require("../Public/data/project.json")
 
 
 const getblog = async (req, res) => {
@@ -129,47 +132,22 @@ const postnotes = async (req, res) => {
 
 const getnotes = async (req, res) => {
   try {
-    const client = await clientPromise;
-    const db = client.db("developerzaid");
-    const notes = await db.collection("notes").find().toArray();
+    console.log("kisi ne notes ki list mangi hai")
     res.json(notes);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 }
 
+
 const downloadnotes = async (req, res) => {
   try {
     const noteId = req.params.id;
-
-    // 🔎 MongoDB se note uthao
-    const client = await clientPromise;
-    const db = client.db("developerzaid");
-
-    const note = await db.collection("notes").findOne({ id: noteId });
+    const note = await notes.findOne({ url: noteId });
 
     if (!note) {
-      return res.status(404).json({ error: "Note not found" });
+      return res.status(404).json({ error: "Notes not found" });
     }
-
-    // ⬇️ Supabase se PDF download
-    const { data, error } = await supabase.storage
-      .from("pdfs")
-      .download(note.file);
-
-    if (error) {
-      return res.status(500).json({ error: error.message });
-    }
-
-    // 📄 Headers set karo
-    res.setHeader("Content-Type", "application/pdf");
-    res.setHeader(
-      "Content-Disposition",
-      `inline; filename="${noteId}.pdf"`
-    );
-
-    // 🧠 Stream PDF
-    const buffer = Buffer.from(await data.arrayBuffer());
     res.send(buffer);
 
   } catch (err) {
@@ -179,6 +157,30 @@ const downloadnotes = async (req, res) => {
 };
 
 
+const getprojectlist = async (req, res) => {
+  try {
+    console.log("kisi ne projects ki list mangi hai")
+    res.json(projects);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+const projectbyslug = async (req, res) => {
+  try {
+    const { slug } = req.params;
+    const projects = projectslug
+    const projectjson = await projects.find((item) => item.slug === slug)
+
+    console.log("kisi ne projects ka slug bheja hai")
+    if (!projectjson) {
+      return res.status(404).json({ message: "Project not found" });
+    }
+    res.json(projectjson);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 
 module.exports = {
@@ -187,5 +189,7 @@ module.exports = {
   getBlogBySlug,
   postblog,
   postnotes,
-  downloadnotes
+  downloadnotes,
+  getprojectlist,
+  projectbyslug
 };

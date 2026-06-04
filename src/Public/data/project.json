@@ -1,0 +1,476 @@
+[
+    {
+        "id": 1,
+        "slug": "blog_web_app_0226",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": true,
+            "section_mobileworking": true
+        },
+        "herosection": {
+            "title": "Blogging & Notes Platform",
+            "title_desc": "A full_stack content management system enabling educators to publish blogs and distribute PDF notes — accessible via a polished web platform and a React Native admin app.",
+            "tech_tags": [
+                "nextjs",
+                "expressjs",
+                "mongodb",
+                "supabase",
+                "react native"
+            ],
+            "title_banner": "/Blog-web-1.png",
+            "unique": [
+                {
+                    "value": "2",
+                    "label": "Platforms",
+                    "sub": "Web + Mobile"
+                },
+                {
+                    "value": "5",
+                    "label": "Technologies",
+                    "sub": "Full Stack"
+                },
+                {
+                    "value": "REST",
+                    "label": "API Design",
+                    "sub": "Express.js"
+                },
+                {
+                    "value": "PDF",
+                    "label": "File Storage",
+                    "sub": "Supabase"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "This platform was built to centralize educational content for a community. Administrators can write and publish long_form blogs, while students can browse and read them on the web.",
+            "howdo": "Beyond text content, the platform serves as a notes library — educators upload PDF files, which are stored in Supabase Storage and made instantly available to all web users.",
+            "facilities": [
+                "Blog publishing with rich text editor",
+                "PDF notes library powered by Supabase",
+                "Mobile admin app for on_the_go publishing",
+                "MongoDB_backed content database"
+            ],
+            "purpose_img": "/blog-web-3.png"
+        },
+        "section_superconcept": {
+            "title": "Notes Library",
+            "superconcept01": "PDF Notes Management",
+            "whatitworks": "Educational notes are uploaded as PDFs and stored securely in Supabase Storage. The web platform fetches and displays these files with clean listing UI — users can browse by category and open notes directly in the browser.",
+            "howitworks": "Supabase's storage buckets make file management simple — each file gets a public URL served via CDN, ensuring fast load times even for large PDF documents.",
+            "superconceptimg": "/blog-web-2.png",
+            "superconceptimgalt": "notes library",
+            "techdivtitle": "Storage Stack",
+            "techdivtags": [
+                "Supabase Storage",
+                "CDN Delivery",
+                "Public URLs",
+                "Bucket Policies"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "Mobile Admin",
+            "apptitle": "React Native Admin App",
+            "whatappworks": "Instead of a traditional web dashboard, administrators manage all content from a dedicated React Native app — allowing publishing from anywhere without needing a laptop.",
+            "howappworks": "The app connects to the same Express.js REST API that powers the web frontend, keeping the backend unified across both clients.",
+            "appfeatures": [
+                {
+                    "title": "Write & Publish Blogs",
+                    "desc": "Rich text editor with live preview"
+                },
+                {
+                    "title": "Upload PDF Notes",
+                    "desc": "File picker → Supabase Storage"
+                },
+                {
+                    "title": "Manage Content",
+                    "desc": "Edit, delete, and reorder posts"
+                }
+            ],
+            "appimage": "/blog-app-1.jpg",
+            "appimagealt": "blog app image"
+        },
+        "section_mobileworking": {
+            "title": "Publishing",
+            "systemworktitle": "Content Publishing Workflow",
+            "systemworkdesc": "The mobile upload form allows admins to fill in blog metadata, write content, and submit — the Express.js API then saves it to MongoDB and makes it instantly visible on the web.",
+            "systemworkimg": "/blog-app-2.jpg",
+            "systemworkimgalt": "mobile working image"
+        },
+        "architecture": {
+            "systemstructure": "System Architecture",
+            "systemstrucdesc": "The system follows a clean client_server separation. Both the Next.js web app and React Native mobile app communicate with a shared Express.js REST API. MongoDB handles structured content (blogs, metadata) while Supabase Storage handles binary files (PDFs).",
+            "systemstrucbanner": "/Blog-web-4.png",
+            "systemtags": [
+                {
+                    "title": "Frontend",
+                    "desc": "Next.js + React Native"
+                },
+                {
+                    "title": "Backend",
+                    "desc": "Express.js REST API"
+                },
+                {
+                    "title": "Storage",
+                    "desc": "MongoDB + Supabase"
+                }
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "slug": "python_games_0126",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": false,
+            "section_mobileworking": false
+        },
+        "herosection": {
+            "title": "Pyarcade",
+            "title_desc": "A series of retro_inspired arcade games built with Pygame, including Flappy Bird, Brick Breaker, and Snake. The project demonstrates game loop architecture, physics simulation, collision handling, score systems, and responsive keyboard controls.",
+            "tech_tags": [
+                "Pygame",
+                "Flappy Bird",
+                "Crash Brick",
+                "Snake Eater"
+            ],
+            "title_banner": "/pygame-arcade-1.png",
+            "unique": [
+                {
+                    "value": "3",
+                    "label": "Games",
+                    "sub": "Pygames"
+                },
+                {
+                    "value": "No",
+                    "label": "Assets",
+                    "sub": "Free Asset"
+                },
+                {
+                    "value": "Responsive",
+                    "label": "Keyboard",
+                    "sub": "Controls"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "This project is a collection of classic arcade games developed with Pygame, recreating popular gameplay experiences such as Flappy Bird, Brick Breaker, and Snake while demonstrating core game development concepts.",
+            "howdo": "Each game was built from scratch using Python and Pygame, featuring real-time rendering, collision detection, scoring systems, object movement, game state management, particle effects, and responsive keyboard controls.",
+            "facilities": [
+                "Flappy Bird with obstacle generation and score tracking",
+                "Brick Breaker with paddle physics and destructible blocks",
+                "Snake game with dynamic growth and collectible food system",
+                "Real-time collision detection and game physics",
+                "Particle effects, animations, and visual feedback systems",
+                "Object-oriented game architecture using Python and Pygame"
+            ],
+            "purpose_img": "/pygame-snake-2.png"
+        },
+        "section_superconcept": {
+            "title": "Game Mechanics",
+            "superconcept01": "Core Gameplay Systems",
+            "whatitworks": "Each game is built around a unique gameplay loop. Flappy Bird challenges players to navigate through procedurally generated obstacles, Brick Breaker combines paddle control with physics-based ball interactions, and Snake focuses on growth mechanics and score progression through collectible items.",
+            "howitworks": "The games run on a custom Pygame architecture that continuously updates object states, processes player input, performs collision detection, manages scoring systems, and renders smooth animations in real time.",
+            "superconceptimg": "pygame-bird-1.png",
+            "superconceptimgalt": "gameplay mechanics showcase",
+            "techdivtitle": "Game Development Stack",
+            "techdivtags": [
+                "Python",
+                "Pygame",
+                "Collision Detection",
+                "Game Loops",
+                "Sprite Management",
+                "Object-Oriented Design"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "",
+            "apptitle": "",
+            "whatappworks": "",
+            "howappworks": "",
+            "appfeatures": [
+                {
+                    "title": "",
+                    "desc": ""
+                },
+                {
+                    "title": "",
+                    "desc": ""
+                },
+                {
+                    "title": "",
+                    "desc": ""
+                }
+            ],
+            "appimage": "",
+            "appimagealt": ""
+        },
+        "section_mobileworking": {
+            "title": "",
+            "systemworktitle": "",
+            "systemworkdesc": "",
+            "systemworkimg": "",
+            "systemworkimgalt": ""
+        },
+        "architecture": {
+            "systemstructure": "Game Engine Architecture",
+            "systemstrucdesc": "The arcade collection is powered by a reusable object-oriented framework built with Pygame. A central game loop coordinates rendering, physics updates, input handling, collision detection, particle systems, score management, and visual effects. This architecture allows multiple games such as Flappy Bird, Brick Breaker, and Snake to share common systems while maintaining their own gameplay mechanics.",
+            "systemstrucbanner": "pygame-break-1.png",
+            "systemtags": [
+                {
+                    "title": "Core Engine",
+                    "desc": "Python + Pygame"
+                },
+                {
+                    "title": "Game Systems",
+                    "desc": "Physics + Collision Detection"
+                },
+                {
+                    "title": "Visual Effects",
+                    "desc": "Particles + Animations"
+                }
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "slug": "local-ai-studio0526",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": false,
+            "section_mobileworking": false
+        },
+        "herosection": {
+            "title": "Local AI Studio",
+            "title_desc": "A desktop AI platform that combines local large language model inference, semantic search, text embeddings, and intelligent command execution. The project enables offline AI interactions while providing an assistant capable of retrieving information and controlling system applications through natural language.",
+            "tech_tags": [
+                "GPT-NeoX",
+                "Embeddings",
+                "Semantic Search",
+                "Desktop AI"
+            ],
+            "title_banner": "/ai-studio-1.png",
+            "unique": [
+                {
+                    "value": "160M",
+                    "label": "Parameters",
+                    "sub": "GPT-NeoX"
+                },
+                {
+                    "value": "384D",
+                    "label": "Vector",
+                    "sub": "Embeddings"
+                },
+                {
+                    "value": "Local",
+                    "label": "AI",
+                    "sub": "Execution"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "Local AI Studio is an offline AI platform that combines language modeling, semantic search, and system automation. Users can interact with a locally hosted language model, generate text embeddings, retrieve relevant information, and execute desktop commands through natural language prompts.",
+            "howdo": "The platform runs a local GPT-NeoX model for text generation and uses a dedicated embedding pipeline to convert text into 384-dimensional vectors. User queries are embedded and compared against stored command embeddings using cosine similarity, allowing the assistant to identify the most relevant action and execute it automatically.",
+            "facilities": [
+                "Local GPT-NeoX language model inference",
+                "384-dimensional text embedding generation",
+                "Semantic command matching using cosine similarity",
+                "Natural language desktop automation",
+                "Wikipedia-powered information retrieval",
+                "Command execution through Python system APIs"
+            ],
+            "purpose_img": "/ai-studio-2.png"
+        },
+        "section_superconcept": {
+            "title": "Semantic Assistant",
+            "superconcept01": "Embedding-Based Command Intelligence",
+            "whatitworks": "The assistant converts both user messages and predefined commands into vector embeddings. Instead of relying on exact keyword matching, it compares semantic meaning through cosine similarity, allowing users to trigger actions using natural language variations.",
+            "howitworks": "When a query is submitted, its embedding is generated and ranked against command embeddings stored in the database. The highest-ranked result is selected and executed through Python system utilities such as os.startfile, subprocess, and webbrowser, enabling intelligent desktop automation.",
+            "superconceptimg": "ai-studio-3.png",
+            "superconceptimgalt": "semantic command matching workflow",
+            "techdivtitle": "AI Processing Stack",
+            "techdivtags": [
+                "Embeddings",
+                "Cosine Similarity",
+                "Vector Search",
+                "Command Ranking",
+                "Semantic Matching",
+                "Desktop Automation"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "",
+            "apptitle": "",
+            "whatappworks": "",
+            "howappworks": "",
+            "appfeatures": [
+                {
+                    "title": "",
+                    "desc": ""
+                },
+                {
+                    "title": "",
+                    "desc": ""
+                },
+                {
+                    "title": "",
+                    "desc": ""
+                }
+            ],
+            "appimage": "",
+            "appimagealt": ""
+        },
+        "section_mobileworking": {
+            "title": "",
+            "systemworktitle": "",
+            "systemworkdesc": "",
+            "systemworkimg": "",
+            "systemworkimgalt": ""
+        },
+        "architecture": {
+            "systemstructure": "Local AI Architecture",
+            "systemstrucdesc": "The platform follows a modular AI pipeline. User input is processed by the embedding engine and compared against stored command vectors. The language model handles conversational responses, while the automation layer executes matched commands. Additional information can be retrieved through Wikipedia integration, combining local intelligence with knowledge retrieval.",
+            "systemstrucbanner": "ai-studio-4.png",
+            "systemtags": [
+                {
+                    "title": "Language Model",
+                    "desc": "GPT-NeoX 160M"
+                },
+                {
+                    "title": "Semantic Layer",
+                    "desc": "Embeddings + Similarity Search"
+                },
+                {
+                    "title": "Automation",
+                    "desc": "Python System APIs"
+                }
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "slug": "hadith-webapp-0326",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": true,
+            "section_mobileworking": true
+        },
+        "herosection": {
+            "title": "Hadith Explorer App & Website",
+            "title_desc": "A cross-platform Hadith discovery platform — featuring a React Native mobile app with search, save, and random hadith features, paired with a fully functional Next.js website for APK download and in-browser reading.",
+            "tech_tags": [
+                "react native",
+                "nextjs",
+                "hadith api",
+                "dark/light theme",
+                "local storage"
+            ],
+            "title_banner": "/hadith-webapp-1.png",
+            "unique": [
+                {
+                    "value": "7",
+                    "label": "Hadith Books",
+                    "sub": "Searchable"
+                },
+                {
+                    "value": "2",
+                    "label": "Platforms",
+                    "sub": "Mobile + Web"
+                },
+                {
+                    "value": "Dark",
+                    "label": "Theme Toggle",
+                    "sub": "Light / Dark"
+                },
+                {
+                    "value": "Save",
+                    "label": "Bookmarks",
+                    "sub": "Local Storage"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "This platform allows users to explore, search, and save Hadiths from 7 major Hadith books. Users can search any hadith by number, read a random hadith with a single tap, and save their favorites for later reading.",
+            "howdo": "The React Native app provides a smooth mobile experience, while the companion Next.js website doubles as both an APK download page and a fully functional web reader — users can search and read hadiths directly in the browser without installing the app.",
+            "facilities": [
+                "Search hadiths by number across 7 books",
+                "Random hadith button for daily reading",
+                "Save & bookmark hadiths locally",
+                "Dark / Light theme toggle",
+                "Next.js website with full search functionality",
+                "APK download page for mobile installation"
+            ],
+            "purpose_img": "/hadith-web-3.png"
+        },
+        "section_superconcept": {
+            "title": "Hadith Search",
+            "superconcept01": "Multi-Book Hadith Search Engine",
+            "whatitworks": "Users can search any hadith by entering its number and selecting from 7 major hadith books — including Bukhari, Muslim, Tirmidhi, and others. Results are displayed instantly with full Arabic text, translation, and reference details.",
+            "howitworks": "The search logic queries the Hadith API filtered by book and number, returning structured data that is rendered in a clean, readable card format — consistent across both the mobile app and the web platform.",
+            "superconceptimg": "/hadith-web-1.png",
+            "superconceptimgalt": "hadith search screen",
+            "techdivtitle": "Search Stack",
+            "techdivtags": [
+                "Hadith API",
+                "Book Filtering",
+                "Number-Based Search",
+                "7 Major Books"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "Mobile App",
+            "apptitle": "React Native Hadith App",
+            "whatappworks": "The mobile app is the core experience — users can search hadiths, read a random one each day, save favorites to revisit later, and switch between dark and light themes for comfortable reading at any time.",
+            "howappworks": "Built in React Native, the app uses local storage to persist saved hadiths and theme preferences, ensuring a personalized experience without requiring any login or backend account.",
+            "appfeatures": [
+                {
+                    "title": "Search by Number",
+                    "desc": "Find any hadith instantly across 7 books"
+                },
+                {
+                    "title": "Random Hadith",
+                    "desc": "One tap to get a random hadith for daily reading"
+                },
+                {
+                    "title": "Save Hadiths",
+                    "desc": "Bookmark favorites stored locally on device"
+                },
+                {
+                    "title": "Dark / Light Theme",
+                    "desc": "Toggle between themes for comfortable reading"
+                }
+            ],
+            "appimage": "/hadith-app-1.jpg",
+            "appimagealt": "hadith react native app"
+        },
+        "section_mobileworking": {
+            "title": "Web Platform",
+            "systemworktitle": "Website — More Than Just a Download Page",
+            "systemworkdesc": "The Next.js website was initially built as an APK download landing page, but was extended into a fully functional Hadith reader — visitors can search hadiths by number, read random hadiths, and explore all 7 books directly in the browser without installing the app.",
+            "systemworkimg": "/hadith-app-2.jpg",
+            "systemworkimgalt": "hadith next.js website"
+        },
+        "architecture": {
+            "systemstructure": "System Architecture",
+            "systemstrucdesc": "The platform follows a simple yet effective architecture. The React Native app and Next.js website both consume the same Hadith API independently. Local storage on the mobile side handles saved hadiths and theme state, while the web frontend mirrors the core app functionality — keeping both experiences in sync without a shared backend.",
+            "systemstrucbanner": "/hadith-web-2.png",
+            "systemtags": [
+                {
+                    "title": "Mobile",
+                    "desc": "React Native App"
+                },
+                {
+                    "title": "Web",
+                    "desc": "Next.js Website + Reader"
+                },
+                {
+                    "title": "Data",
+                    "desc": "Hadith API — 7 Books"
+                }
+            ]
+        }
+    }
+]
