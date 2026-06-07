@@ -4,9 +4,9 @@ const supabase = require("../lib/supabase");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const notes = require("../Public/data/data")
-const projects = require("../Public/data/data")
-const projectslug = require("../Public/data/project.json")
+const notes = require("../data/Content/data")
+const projects = require("../data/Content/data")
+const projectslug = require("../data/Content/project.json")
 
 
 const getblog = async (req, res) => {
