@@ -11,7 +11,7 @@ const projectslug = require("../data/Content/project.json")
 
 const getblog = async (req, res) => {
   try {
-    console.log("request giri bhaya");
+    // console.log("request giri bhaya");
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const blogs = await db.collection("blogs").find().toArray();
@@ -132,7 +132,7 @@ const postnotes = async (req, res) => {
 
 const getnotes = async (req, res) => {
   try {
-    console.log("kisi ne notes ki list mangi hai")
+    // console.log("kisi ne notes ki list mangi hai")
     res.json(notes);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -159,7 +159,7 @@ const downloadnotes = async (req, res) => {
 
 const getprojectlist = async (req, res) => {
   try {
-    console.log("kisi ne projects ki list mangi hai")
+    // console.log("kisi ne projects ki list mangi hai")
     res.json(projects);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -172,7 +172,7 @@ const projectbyslug = async (req, res) => {
     const projects = projectslug
     const projectjson = await projects.find((item) => item.slug === slug)
 
-    console.log("kisi ne projects ka slug bheja hai")
+    // console.log("kisi ne projects ka slug bheja hai")
     if (!projectjson) {
       return res.status(404).json({ message: "Project not found" });
     }

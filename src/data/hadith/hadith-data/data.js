@@ -1,4 +1,4 @@
-export const books = [
+const books = [
     {
         id: 'sahih-bukhari',
         importing: "sahihbukhari",
@@ -18,7 +18,7 @@ export const books = [
         volumes: 7,
     },
     {
-        id: 'al-tirmidhi',
+        id: 'jami-at-tirmidhi',
         importing: "jamiattirmidhi",
         file: "Jami-at-tirmidhi.json",
         title: 'Al Tirmidhi',
@@ -63,3 +63,5 @@ export const books = [
         volumes: 4,
     },
 ];
+
+module.exports = books;

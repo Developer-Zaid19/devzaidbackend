@@ -1,9 +1,11 @@
 
 const express = require("express");
-const {Contactform, fetchclients} = require("../Controllers/myhadith.js")
+const {gethadithbooklist, gethadithlistbybook, getrandomhadith, gethadithbynumber} = require("../Controllers/myhadith.js")
 const myhadith = express.Router();
 
-myhadith.post("/contactform", Contactform);
-myhadith.post("/fetchclients", fetchclients);
+myhadith.get("/booklist", gethadithbooklist);
+myhadith.post("/hadithlist", gethadithlistbybook);
+myhadith.get("/randomhadith", getrandomhadith);
+myhadith.post("/findhadith", gethadithbynumber);
 
 module.exports = myhadith;
