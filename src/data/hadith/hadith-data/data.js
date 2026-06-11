@@ -54,7 +54,7 @@ const books = [
         volumes: 5,
     },
     {
-        id: 'mishkat',
+        id: 'mishkat-al-masabih',
         importing: "mishkatalmasabih",
         file: "Mishkat-al-Masabih.json",
         title: 'Mishkat',
