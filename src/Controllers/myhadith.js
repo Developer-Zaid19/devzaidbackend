@@ -14,6 +14,9 @@ const ibnemajah = require("../data/hadith/Hadith-Json/Ibn-e-Majah.json");
 
 const gethadithbooklist = async (req, res) => {
     try {
+        if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+            return res.status(502).json({ error: "SOME THING WENT WRONG" })
+        }
         // console.log("request giri bhaya on getbook list per");
         const hadithbooks = await books;
         res.status(200).json(hadithbooks);
@@ -25,6 +28,10 @@ const gethadithbooklist = async (req, res) => {
 
 const gethadithlistbybook = async (req, res) => {
     try {
+
+        if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+            return res.status(502).json({ error: "SOME THING WENT WRONG" })
+        }
         // console.log("request giri bhaya on get hadith list by book name");
 
         const { bookslug, pagenumber } = req.body;
@@ -86,6 +93,10 @@ const gethadithlistbybook = async (req, res) => {
 // okkay 
 const getrandomhadith = async (req, res) => {
     try {
+
+        if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+            return res.status(502).json({ error: "SOME THING WENT WRONG" })
+        }
         // console.log("request giri bhaya random hadith ke liye");
 
         const bookjson = [
@@ -125,6 +136,10 @@ const getrandomhadith = async (req, res) => {
 // okkay
 const gethadithbynumber = async (req, res) => {
     try {
+
+        if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+            return res.status(502).json({ error: "SOME THING WENT WRONG" })
+        }
         // console.log("request giri bhaya hadith ke number se hadith ke liye");
         const { bookslug, hadithnumber } = req.body;
         // console.log(bookslug, hadithnumber)
