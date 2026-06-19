@@ -7,7 +7,7 @@ const contentrouter = express.Router();
 contentrouter.get("/blogs", getblog);
 contentrouter.get("/totalblog", getnumberofblogs);
 contentrouter.get("/blogs/:blogslug", getBlogBySlug);
-contentrouter.get("/deleteblogs/:blogslug", deleteBlog);
+contentrouter.delete("/deleteblog/:blogslug", deleteBlog);
 contentrouter.get("/notes", getnotes); 
 contentrouter.get("/totalnotes", getnumberofnotes); 
 contentrouter.get("/notes/:id", downloadnotes);

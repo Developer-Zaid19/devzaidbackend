@@ -87,6 +87,9 @@ const postblog = async (req, res) => {
 
 const deleteBlog = async (req, res) => {
   try {
+    if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+      return res.status(502).json({ error: "SOME THING WENT WRONG" })
+    }
     const { blogslug } = req.params;
 
     const client = await clientPromise;
