@@ -21,6 +21,18 @@ const getblog = async (req, res) => {
   }
 }
 
+const getnumberofblogs = async (req, res) => {
+  try {
+    const client = await clientPromise;
+    const db = client.db("developerzaid");
+    const blogs = await db.collection("blogs").countDocuments();
+    console.log(blogs)
+    res.json({total: blogs});
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
 const getBlogBySlug = async (req, res) => {
   try {
     const { blogslug } = req.params;
@@ -55,18 +67,18 @@ const postblog = async (req, res) => {
     const slug =
       req.body.title.replaceAll(" ", "-").toLowerCase() + "-" + formattedDate + "-" + hh + mm + ss;
 
-      const blogcontent = {
-        "id": slug,
-        "title": req.body.title,
-        "date": formattedDate,
-        "description": req.body.description,
-        "content": req.body.content,
-        "para1": req.body.para1,
-        "para2": req.body.para2
+    const blogcontent = {
+      "id": slug,
+      "title": req.body.title,
+      "date": formattedDate,
+      "description": req.body.description,
+      "content": req.body.content,
+      "para1": req.body.para1,
+      "para2": req.body.para2
 
-      }
-      const result = await db.collection("blogs").insertOne(blogcontent);
-      res.json({ success: true, result });
+    }
+    const result = await db.collection("blogs").insertOne(blogcontent);
+    res.json({ success: true, result });
 
 
   } catch (err) {
@@ -111,7 +123,7 @@ const postnotes = async (req, res) => {
     const notescontent = {
       id: slug,
       title: req.body.title,
-      file: filePath, 
+      file: filePath,
       category: req.body.category,
       date: formattedDate,
     };
@@ -191,5 +203,6 @@ module.exports = {
   postnotes,
   downloadnotes,
   getprojectlist,
-  projectbyslug
+  projectbyslug,
+  getnumberofblogs
 };
