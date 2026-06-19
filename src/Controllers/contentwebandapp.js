@@ -4,7 +4,7 @@ const supabase = require("../lib/supabase");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const notes = require("../data/Content/data")
+const { notes } = require("../data/Content/data")
 const projects = require("../data/Content/data")
 const projectslug = require("../data/Content/project.json")
 
@@ -26,7 +26,6 @@ const getnumberofblogs = async (req, res) => {
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const blogs = await db.collection("blogs").countDocuments();
-    console.log(blogs)
     res.json({total: blogs});
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -195,6 +194,16 @@ const projectbyslug = async (req, res) => {
 };
 
 
+const getnumberofnotes = async (req, res) => {
+  try {
+    const numbernotes = notes.length;
+    res.json({total: numbernotes});
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+
+
 module.exports = {
   getblog,
   getnotes,
@@ -204,5 +213,6 @@ module.exports = {
   downloadnotes,
   getprojectlist,
   projectbyslug,
-  getnumberofblogs
+  getnumberofblogs,
+  getnumberofnotes
 };
