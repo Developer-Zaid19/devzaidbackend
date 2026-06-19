@@ -85,6 +85,34 @@ const postblog = async (req, res) => {
   }
 };
 
+const deleteBlog = async (req, res) => {
+  try {
+    const { blogslug } = req.params;
+
+    const client = await clientPromise;
+    const db = client.db("developerzaid");
+
+    const result = await db.collection("blogs").deleteOne({
+      id: blogslug,
+    });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({
+        message: "Blog not found",
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Blog deleted successfully",
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message,
+    });
+  }
+};
+
 const postnotes = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
@@ -214,5 +242,6 @@ module.exports = {
   getprojectlist,
   projectbyslug,
   getnumberofblogs,
-  getnumberofnotes
+  getnumberofnotes,
+  deleteBlog
 };

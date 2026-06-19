@@ -1,5 +1,5 @@
 const express = require("express");
-const { getblog, getnotes, postblog, getBlogBySlug, postnotes, downloadnotes, getprojectlist, projectbyslug, getnumberofnotes, getnumberofblogs } = require("../Controllers/contentwebandapp.js");
+const { getblog, getnotes, postblog, getBlogBySlug, postnotes, downloadnotes, getprojectlist, projectbyslug, deleteBlog, getnumberofnotes, getnumberofblogs } = require("../Controllers/contentwebandapp.js");
 const uploadpdf = require("../middleware/uploadpdf.js")
 
 const contentrouter = express.Router();
@@ -7,6 +7,7 @@ const contentrouter = express.Router();
 contentrouter.get("/blogs", getblog);
 contentrouter.get("/totalblog", getnumberofblogs);
 contentrouter.get("/blogs/:blogslug", getBlogBySlug);
+contentrouter.get("/deleteblogs/:blogslug", deleteBlog);
 contentrouter.get("/notes", getnotes); 
 contentrouter.get("/totalnotes", getnumberofnotes); 
 contentrouter.get("/notes/:id", downloadnotes);
