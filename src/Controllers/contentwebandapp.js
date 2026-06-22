@@ -116,6 +116,60 @@ const deleteBlog = async (req, res) => {
   }
 };
 
+
+const updateBlog = async (req, res) => {
+  try {
+    if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+      return res.status(502).json({ error: "SOME THING WENT WRONG" })
+    }
+
+    const { id } = req.params;
+
+    const {
+      title,
+      description,
+      content,
+      para1,
+      para2
+    } = req.body;
+
+    const updatedBlog = await Blog.findOneAndUpdate(
+      { id },
+      {
+        title,
+        description,
+        content,
+        para1,
+        para2
+      },
+      {
+        new: true
+      }
+    );
+
+    if (!updatedBlog) {
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found"
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Blog updated successfully",
+      blog: updatedBlog
+    });
+
+  } catch (error) {
+
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+
+  }
+};
+
 const postnotes = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
@@ -246,5 +300,6 @@ module.exports = {
   projectbyslug,
   getnumberofblogs,
   getnumberofnotes,
-  deleteBlog
+  deleteBlog,
+  updateBlog
 };
