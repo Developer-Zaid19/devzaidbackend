@@ -472,5 +472,123 @@
                 }
             ]
         }
+    },
+    {
+        "id": 5,
+        "slug": "E_Commerce-webapp-0626",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": true,
+            "section_mobileworking": true
+        },
+        "herosection": {
+            "title": "E-Commerce Shopping Platform",
+            "title_desc": "A modern full-stack e-commerce ecosystem featuring a customer-facing web application and a React Native mobile app for seamless shopping, product discovery, and order management.",
+            "tech_tags": [
+                "nextjs",
+                "reactjs",
+                "mongodb",
+                "react native",
+                "javascript"
+            ],
+            "title_banner": "/market-web-1.png",
+            "unique": [
+                {
+                    "value": "2",
+                    "label": "Platforms",
+                    "sub": "Web + Mobile"
+                },
+                {
+                    "value": "5",
+                    "label": "Technologies",
+                    "sub": "Modern Stack"
+                },
+                {
+                    "value": "UI",
+                    "label": "Responsive Design",
+                    "sub": "Mobile First"
+                },
+                {
+                    "value": "100%",
+                    "label": "Frontend Focus",
+                    "sub": "Client Side"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "This project provides a complete online shopping experience where users can browse products, view detailed information, search items, and manage their shopping cart through a clean and responsive interface.",
+            "howdo": "The platform organizes products into categories and presents them with engaging product pages, allowing customers to explore items efficiently across both web and mobile applications.",
+            "facilities": [
+                "Product catalog with category organization",
+                "Product search and filtering",
+                "Shopping cart management",
+                "Cross-platform web and mobile experience"
+            ],
+            "purpose_img": "/market-web-2.png"
+        },
+        "section_superconcept": {
+            "title": "Product Catalog",
+            "superconcept01": "Smart Product Browsing",
+            "whatitworks": "Products are displayed in structured collections with images, pricing information, and detailed descriptions. Users can navigate categories, explore featured products, and quickly find items that match their interests.",
+            "howitworks": "The application uses optimized state management and reusable UI components to render product data efficiently, creating a smooth shopping experience across different devices and screen sizes.",
+            "superconceptimg": "/market-web-3.png",
+            "superconceptimgalt": "product catalog",
+            "techdivtitle": "Shopping Features",
+            "techdivtags": [
+                "Product Listings",
+                "Category Filters",
+                "Search System",
+                "Cart Management"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "Mobile Shopping",
+            "apptitle": "React Native E-Commerce App",
+            "whatappworks": "The React Native mobile application brings the complete shopping experience to smartphones, allowing users to browse products, manage their cart, and explore collections from anywhere.",
+            "howappworks": "Built using React Native, the mobile app shares the same business logic and product structure as the web platform, ensuring a consistent user experience across devices.",
+            "appfeatures": [
+                {
+                    "title": "Browse Products",
+                    "desc": "Explore products with smooth navigation"
+                },
+                {
+                    "title": "Manage Cart",
+                    "desc": "Add, remove, and update cart items"
+                },
+                {
+                    "title": "Product Details",
+                    "desc": "Images, descriptions, and pricing"
+                }
+            ],
+            "appimage": "/market-app-1.jpg",
+            "appimagealt": "market app image"
+        },
+        "section_mobileworking": {
+            "title": "Shopping Flow",
+            "systemworktitle": "Customer Purchase Journey",
+            "systemworkdesc": "Users discover products through categories and search, view detailed product information, add items to their cart, and manage selections through an intuitive shopping workflow designed for speed and usability.",
+            "systemworkimg": "/market-app-2.jpg",
+            "systemworkimgalt": "mobile shopping workflow"
+        },
+        "architecture": {
+            "systemstructure": "System Architecture",
+            "systemstrucdesc": "The project follows a component-based architecture using Next.js for the web platform and React Native for mobile devices. Product data is managed through structured state management, while reusable UI components ensure consistency across both applications.",
+            "systemstrucbanner": "/market-web-6.png",
+            "systemtags": [
+                {
+                    "title": "Web App",
+                    "desc": "Next.js + React.js"
+                },
+                {
+                    "title": "Mobile App",
+                    "desc": "React Native"
+                },
+                {
+                    "title": "Data Layer",
+                    "desc": "State Management"
+                }
+            ]
+        }
     }
 ]

@@ -85,11 +85,19 @@ const projects = [
   },
   {
     id: 4,
-    title: "Blogging - Upload from mobile to web",
+    title: "Blogging - Website & mobileApp",
     description: "",
     tags: ["JavaScript", "NextJS", "ReactNative"],
     url: "blog_web_app_0226",
     image: "/Blog-webapp-1.png"
+  },
+  {
+    id: 5,
+    title: "E-Commerce - Website & mobileApp",
+    description: "",
+    tags: ["JavaScript", "NextJS", "ReactNative"],
+    url: "E_Commerce-webapp-0626",
+    image: "/market-web-6.png"
   },
 ];
 
