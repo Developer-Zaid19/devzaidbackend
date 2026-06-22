@@ -130,41 +130,50 @@ const updateBlog = async (req, res) => {
       description,
       content,
       para1,
-      para2
+      para2,
     } = req.body;
 
-    const updatedBlog = await Blog.findOneAndUpdate(
-      { id },
+    const client = await clientPromise;
+    const db = client.db("developerzaid");
+
+    const result = await db.collection("blogs").updateOne(
       {
-        title,
-        description,
-        content,
-        para1,
-        para2
+        id: id,
       },
       {
-        new: true
+        $set: {
+          title,
+          description,
+          content,
+          para1,
+          para2,
+        },
       }
     );
 
-    if (!updatedBlog) {
+    if (result.matchedCount === 0) {
       return res.status(404).json({
         success: false,
-        message: "Blog not found"
+        message: "Blog not found",
       });
     }
 
-    res.status(200).json({
+    // const updatedBlog = await db.collection("blogs").findOne({
+    //   id: id,
+    // });
+
+    return res.status(200).json({
       success: true,
       message: "Blog updated successfully",
-      blog: updatedBlog
     });
 
   } catch (error) {
 
-    res.status(500).json({
+    console.error("Update Blog Error:", error);
+
+    return res.status(500).json({
       success: false,
-      message: error.message
+      message: error.message,
     });
 
   }
