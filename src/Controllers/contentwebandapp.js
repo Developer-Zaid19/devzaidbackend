@@ -53,8 +53,10 @@ const getBlogBySlug = async (req, res) => {
 const postblog = async (req, res) => {
   try {
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
+      console.log("match nahhi hua ", req.body.verifypass)
       return res.status(502).json({ error: "SOME THING WENT WRONG" })
     }
+    console.log("match to hogaya")
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const today = new Date();
