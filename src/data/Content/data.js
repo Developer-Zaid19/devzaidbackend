@@ -14,7 +14,7 @@ const notes = [
   {
     id: 2,
     title: "Pandas - Cheatsheet",
-    description: "",
+    description: "Pandas Most Uses Function and methods",
     url: "Pandas-Cheatsheet0306",
     image: "/Pandas_logo.svg.png",
     type: "Python",
@@ -27,7 +27,7 @@ const notes = [
   {
     id: 3,
     title: "Quantum Computers - Hardware & Software",
-    description: "",
+    description: "Q&a of Quantum computers Hardwares and Softwares",
     url: "Quantum_Computers-Hardware_and_Software0306",
     image: "/10349709.png",
     type: "Computer",
@@ -40,7 +40,7 @@ const notes = [
   {
     id: 4,
     title: "Nmap - Network Scanning",
-    description: "",
+    description: "Nmap Commands CheatSheet",
     url: "Nmap-Network_Scanning0306",
     image: "/Nmap-practice-lab1.png",
     type: "Ethical Hacking",
@@ -52,7 +52,7 @@ const notes = [
   {
     id: 5,
     title: "React Native - Cheatsheet",
-    description: "",
+    description: "ReactNative Components, Styling Objects and build Guide",
     url: "React_Native-Cheatsheet0306",
     image: "/React-icon.svg.png",
     type: "JavaScript",
@@ -64,7 +64,7 @@ const notes = [
   {
     id: 6,
     title: "Linux Commands - Cheatsheet",
-    description: "",
+    description: "Linux basic commands for daily use of Command Line Interface",
     url: "Linux_Commands-Cheatsheet0306",
     image: "/linux.png",
     type: "OS",
@@ -76,7 +76,7 @@ const notes = [
   {
     id: 7,
     title: "Matplotlib - Cheatsheet",
-    description: "",
+    description: "Matplotlib Most Uses Function and methods",
     url: "Matplotlib-Cheatsheet",
     image: "/Matplotlib.png",
     type: "Python",
@@ -88,7 +88,7 @@ const notes = [
   {
     id: 8,
     title: "Metasploit - Simple Cheatsheet",
-    description: "",
+    description: "Metasploit Commands CheatSheet for Newbie",
     url: "Metasploit-Simple_Cheatsheet",
     image: "/metasploit.png",
     type: "Ethical Hacking",
@@ -104,42 +104,52 @@ const projects = [
   {
     id: 1,
     title: "MyHadith - Mobile App & Website",
-    description: "",
+    description: "A Daily Hadith mobile app and website for daily reading",
     tags: ["JS", "Cl-Tools", "ReactNative"],
     url: "hadith-webapp-0326",
-    image: "/hadith-webapp-1.png"
+    image: "/hadith-webapp-1.png",
+    type: "SYSTEM",
+    language: "JavaScript"
   },
   {
     id: 2,
     title: "PyGames - Python pygame",
-    description: "",
+    description: "A simple project of python games using pygame",
     tags: ["Python", "Pygame", "3 Games"],
     url: "python_games_0126",
-    image: "/pygame-bird-1.png"
+    image: "/pygame-bird-1.png",
+    type: "Software",
+    language: "Python"
   },
   {
     id: 3,
     title: "VirtueModel - Django WebAI & Embedding",
-    description: "",
+    description: "A 160M chating, Text Embedding Generator and Task Automation Model",
     tags: ["Python", "Transformer", "Jarvis"],
     url: "local-ai-studio0526",
-    image: "/ai-studio-3.png"
+    image: "/ai-studio-3.png",
+    type: "Software",
+    language: "Python"
   },
   {
     id: 4,
     title: "Blogging - Website & mobileApp",
-    description: "",
+    description: "A blogging Website And Mobile App With a System",
     tags: ["JavaScript", "NextJS", "ReactNative"],
     url: "blog_web_app_0226",
-    image: "/Blog-webapp-1.png"
+    image: "/Blog-webapp-1.png",
+    type: "SYSTEM",
+    language: "JavaScript"
   },
   {
     id: 5,
     title: "E-Commerce - Website & mobileApp",
-    description: "",
+    description: "A E-commerce Website And Mobile App With a System",
     tags: ["JavaScript", "NextJS", "ReactNative"],
     url: "E_Commerce-webapp-0626",
-    image: "/market-web-6.png"
+    image: "/market-web-6.png",
+    type: "SYSTEM",
+    language: "JavaScript"
   },
 ];
 

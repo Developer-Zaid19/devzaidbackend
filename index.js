@@ -6,6 +6,7 @@ const clientPromise = require("./src/lib/mongodb.js");
 const contentrouter = require("./src/Routes/contentwebandapp.js");
 const myhadithrouter = require("./src/Routes/myhadith.js");
 const commonrouter = require("./src/Routes/common.js");
+const Commercerouter = require("./src/Routes/commerce.js");
 
 const app = express();
 app.use(cors());
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 app.use("/api/content", contentrouter);
 app.use("/api/connectus", commonrouter);
 app.use("/api/hadith", myhadithrouter);
+app.use("/api/products", Commercerouter);
 
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
