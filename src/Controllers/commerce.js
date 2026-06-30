@@ -3,13 +3,15 @@ const clientPromise = require("../lib/mongodb");
 const { ZipArchive } = require("archiver");
 const path = require("path");
 const fs = require("fs");
+const { apks } = require("../data/Content/data")
+
 
 
 
 const downloadOrder = async (req, res) => {
     try {
         const items = req.body;
-
+        // console.log(items)
         if (!Array.isArray(items) || items.length === 0) {
             return res.status(400).json({
                 success: false,
@@ -34,8 +36,16 @@ const downloadOrder = async (req, res) => {
                 filePath = path.join(
                     process.cwd(),
                     "src",
-                    "Public",
+                    "products",
                     "projects-zip",
+                    `${item.id}.zip`
+                );
+            } else if (item.type === "apk") {
+                filePath = path.join(
+                    process.cwd(),
+                    "src",
+                    "products",
+                    "apks-zip",
                     `${item.id}.zip`
                 );
             }
@@ -45,7 +55,7 @@ const downloadOrder = async (req, res) => {
             }
         }
 
-
+        // console.log(files)
         if (files.length === 0) {
             return res.status(404).json({
                 success: false,
@@ -91,7 +101,17 @@ const downloadOrder = async (req, res) => {
     }
 };
 
+const getapkproducts = async (req, res) => {
+  try {
+    // console.log("kisi ne apks ki list mangi hai")
+    // console.log(apks)
+    res.status(200).json(apks);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
 
 module.exports = {
     downloadOrder,
+    getapkproducts,
 };

@@ -153,7 +153,51 @@ const projects = [
   },
 ];
 
+const apks = [
+  {
+    name: "my hadith",
+    slug: "hadith-apk-0306",
+    icon: "/myhadith-icon.png",
+    shortDescription: "A Daily Hadith mobile app reading",
+    screenshots: ["hadith-app-1", "hadith-app-2"],
+    category: "Reading",
+    version: "1.1.0",
+    apkSize: "42",
+    androidVersion: "6/6+",
+    price: "Free",
+    lastUpdated: "Mar 2026"
+  },
+  {
+    name: "E-commerce App",
+    slug: "e-commerce-apk-0306",
+    icon: "/e-commerce-icon.png",
+    shortDescription: "A Template for E-commerce app",
+    screenshots: ["market-app-1", "market-app-2", "market-app-3", "market-app-4", "market-app-5", "market-app-6", "market-app-7"],
+    category: "Sample",
+    version: "1.0.0",
+    apkSize: "22",
+    androidVersion: "6/6+",
+    price: "Free",
+    lastUpdated: "May 2026"
+  },
+  {
+    name: "Blogging App",
+    slug: "blog-apk-0306",
+    icon: "/blogging-icon.png",
+    shortDescription: "A Daily Hadith mobile app reading",
+    screenshots: ["blog-app-1", "blog-app-2", "blog-app-3", "blog-app-4", "blog-app-5", "blog-app-6"],
+    category: "Sample",
+    version: "1.0.0",
+    apkSize: "22",
+    androidVersion: "6/6+",
+    price: "Free",
+    lastUpdated: "Jun 2026"
+  },
+  
+]
+
 module.exports = {
   notes,
-  projects
+  projects,
+  apks
 };

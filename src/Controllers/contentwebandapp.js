@@ -4,8 +4,7 @@ const supabase = require("../lib/supabase");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
-const { notes } = require("../data/Content/data")
-const projects = require("../data/Content/data")
+const { notes, projects } = require("../data/Content/data")
 const projectslug = require("../data/Content/project.json")
 
 
@@ -267,6 +266,7 @@ const downloadnotes = async (req, res) => {
 const getprojectlist = async (req, res) => {
   try {
     // console.log("kisi ne projects ki list mangi hai")
+    // console.log(projects)
     res.json(projects);
   } catch (err) {
     res.status(500).json({ error: err.message });
