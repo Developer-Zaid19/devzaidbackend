@@ -6,8 +6,6 @@ const fs = require("fs");
 const { apks } = require("../data/Content/data")
 
 
-
-
 const downloadOrder = async (req, res) => {
     try {
         const items = req.body;
@@ -102,16 +100,33 @@ const downloadOrder = async (req, res) => {
 };
 
 const getapkproducts = async (req, res) => {
-  try {
-    // console.log("kisi ne apks ki list mangi hai")
-    // console.log(apks)
-    res.status(200).json(apks);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
+    try {
+        // console.log("kisi ne apks ki list mangi hai")
+        // console.log(apks)
+        res.status(200).json(apks);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+};
+
+
+const getapkbyslug = async (req, res) => {
+    try {
+        const { slug } =  req.params;
+        // console.log(slug)
+        // console.log(apks)
+        const apk = await apks.find((item) => item.slug === slug)
+        if (!apk) {
+            return res.status(404).json({ message: "Project not found" });
+        }
+        res.json(apk);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 };
 
 module.exports = {
     downloadOrder,
     getapkproducts,
+    getapkbyslug,
 };
