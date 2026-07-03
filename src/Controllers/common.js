@@ -4,9 +4,12 @@ const clientPromise = require("../lib/mongodb");
 
 const Contactform = async (req, res) => {
   try {
+
+    // console.log(req.body)
     if (!req.body.verifypass || req.body.verifypass !== process.env.VERIFY_PASS) {
       return res.status(502).json({ error: "SOME THING WENT WRONG" })
     }
+    // console.log(req.body)
     const client = await clientPromise;
     const db = client.db("developerzaid");
     const today = new Date();
