@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const cors =  require("cors");
+const cors = require("cors");
 const clientPromise = require("./src/lib/mongodb.js");
 const contentrouter = require("./src/Routes/contentwebandapp.js");
 const myhadithrouter = require("./src/Routes/myhadith.js");

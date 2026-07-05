@@ -172,7 +172,7 @@
             "superconcept01": "Core Gameplay Systems",
             "whatitworks": "Each game is built around a unique gameplay loop. Flappy Bird challenges players to navigate through procedurally generated obstacles, Brick Breaker combines paddle control with physics-based ball interactions, and Snake focuses on growth mechanics and score progression through collectible items.",
             "howitworks": "The games run on a custom Pygame architecture that continuously updates object states, processes player input, performs collision detection, manages scoring systems, and renders smooth animations in real time.",
-            "superconceptimg": "pygame-bird-1.png",
+            "superconceptimg": "/pygame-bird-1.png",
             "superconceptimgalt": "gameplay mechanics showcase",
             "techdivtitle": "Game Development Stack",
             "techdivtags": [
@@ -216,7 +216,7 @@
         "architecture": {
             "systemstructure": "Game Engine Architecture",
             "systemstrucdesc": "The arcade collection is powered by a reusable object-oriented framework built with Pygame. A central game loop coordinates rendering, physics updates, input handling, collision detection, particle systems, score management, and visual effects. This architecture allows multiple games such as Flappy Bird, Brick Breaker, and Snake to share common systems while maintaining their own gameplay mechanics.",
-            "systemstrucbanner": "pygame-break-1.png",
+            "systemstrucbanner": "/pygame-break-1.png",
             "systemtags": [
                 {
                     "title": "Core Engine",
@@ -288,7 +288,7 @@
             "superconcept01": "Embedding-Based Command Intelligence",
             "whatitworks": "The assistant converts both user messages and predefined commands into vector embeddings. Instead of relying on exact keyword matching, it compares semantic meaning through cosine similarity, allowing users to trigger actions using natural language variations.",
             "howitworks": "When a query is submitted, its embedding is generated and ranked against command embeddings stored in the database. The highest-ranked result is selected and executed through Python system utilities such as os.startfile, subprocess, and webbrowser, enabling intelligent desktop automation.",
-            "superconceptimg": "ai-studio-3.png",
+            "superconceptimg": "/ai-studio-3.png",
             "superconceptimgalt": "semantic command matching workflow",
             "techdivtitle": "AI Processing Stack",
             "techdivtags": [
@@ -332,7 +332,7 @@
         "architecture": {
             "systemstructure": "Local AI Architecture",
             "systemstrucdesc": "The platform follows a modular AI pipeline. User input is processed by the embedding engine and compared against stored command vectors. The language model handles conversational responses, while the automation layer executes matched commands. Additional information can be retrieved through Wikipedia integration, combining local intelligence with knowledge retrieval.",
-            "systemstrucbanner": "ai-studio-4.png",
+            "systemstrucbanner": "/ai-studio-4.png",
             "systemtags": [
                 {
                     "title": "Language Model",
