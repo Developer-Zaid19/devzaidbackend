@@ -16,6 +16,10 @@ app.use(
   express.static(path.join(__dirname, "src/Public"))
 );
 
+app.use(
+  "/downloads",
+  express.static(path.join(process.cwd(), "src", "temp"))
+);
 
 console.log("server pe request giri sir !")
 app.get("/", (req, res) => {
