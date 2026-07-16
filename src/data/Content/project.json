@@ -17,7 +17,7 @@
                 "supabase",
                 "react native"
             ],
-            "title_banner": "/Blog-web-1.png",
+            "title_banner": "/blog-webapp-1.png",
             "unique": [
                 {
                     "value": "2",
@@ -587,6 +587,124 @@
                 {
                     "title": "Data Layer",
                     "desc": "State Management"
+                }
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "slug": "developer_store_0726",
+        "structure": {
+            "section_superconcept": true,
+            "section_mobileapp": true,
+            "section_mobileworking": true
+        },
+        "herosection": {
+            "title": "Developer Digital Store",
+            "title_desc": "A full-stack digital marketplace where developers and students can discover, download, and manage free educational resources including notes, APKs, source code projects, and development tools across both web and mobile platforms.",
+            "tech_tags": [
+                "nextjs",
+                "react native",
+                "expressjs",
+                "mongodb",
+                "tailwindcss"
+            ],
+            "title_banner": "/store-webapp-1.png",
+            "unique": [
+                {
+                    "value": "2",
+                    "label": "Platforms",
+                    "sub": "Web + Mobile"
+                },
+                {
+                    "value": "4",
+                    "label": "Content Types",
+                    "sub": "Notes • APKs • Source Code • Tools"
+                },
+                {
+                    "value": "REST",
+                    "label": "API",
+                    "sub": "Express.js"
+                },
+                {
+                    "value": "Free",
+                    "label": "Downloads",
+                    "sub": "Instant Access"
+                }
+            ]
+        },
+        "overview": {
+            "purpose": "what does it do",
+            "whatdo": "The platform serves as a centralized digital store where students and developers can browse educational resources including programming notes, Android applications, complete source code projects, and development assets through a clean shopping-style interface.",
+            "howdo": "Although inspired by an e-commerce experience, every digital product is freely available. Users can search, filter, preview, add resources to a cart, and download everything instantly without any payment process.",
+            "facilities": [
+                "Free download center for digital resources",
+                "Advanced search and category filters",
+                "Shopping cart experience for digital products",
+                "Responsive web platform with dedicated mobile app"
+            ],
+            "purpose_img": "/store-web-2.png"
+        },
+        "section_superconcept": {
+            "title": "Digital Library",
+            "superconcept01": "Unified Resource Collection",
+            "whatitworks": "Instead of separating notes, APKs, and source code into different platforms, everything is organized inside one searchable digital library. Each resource contains detailed information, screenshots, metadata, and download links to improve discoverability.",
+            "howitworks": "The frontend fetches categorized content from a shared Express.js API and dynamically renders collections using reusable components. Search, filtering, and related-content recommendations help users quickly find relevant resources.",
+            "superconceptimg": "/store-web-3.png",
+            "superconceptimgalt": "digital resource library",
+            "techdivtitle": "Core Features",
+            "techdivtags": [
+                "Search Engine",
+                "Category Filters",
+                "Related Resources",
+                "Instant Downloads"
+            ]
+        },
+        "section_mobileapp": {
+            "title": "Mobile Experience",
+            "apptitle": "React Native Digital Store",
+            "whatappworks": "The mobile application delivers the complete store experience with optimized navigation, offline-friendly caching, favorites management, and seamless access to educational resources from any Android device.",
+            "howappworks": "Both the web application and mobile app communicate with the same REST API, ensuring synchronized content across every platform while reducing backend complexity.",
+            "appfeatures": [
+                {
+                    "title": "Browse Resources",
+                    "desc": "Notes, APKs, and source code collections"
+                },
+                {
+                    "title": "Favorites",
+                    "desc": "Save resources for quick access"
+                },
+                {
+                    "title": "Download Manager",
+                    "desc": "One-tap access to digital content"
+                }
+            ],
+            "appimage": "/store-app-1.jpg",
+            "appimagealt": "mobile digital store"
+        },
+        "section_mobileworking": {
+            "title": "Resource Delivery",
+            "systemworktitle": "Digital Content Workflow",
+            "systemworkdesc": "Resources are managed through the backend API, categorized, and exposed to both clients. When users browse the catalog, content is fetched dynamically, displayed with detailed pages, and made available for immediate download while maintaining a consistent experience across web and mobile.",
+            "systemworkimg": "/store-app-2.jpg",
+            "systemworkimgalt": "resource workflow"
+        },
+        "architecture": {
+            "systemstructure": "System Architecture",
+            "systemstrucdesc": "The project follows a unified full-stack architecture where the Next.js web application and React Native mobile app consume a shared Express.js REST API. MongoDB stores product metadata, categories, and content information while the frontend provides a responsive e-commerce style interface for exploring free digital resources.",
+            "systemstrucbanner": "/store-web-4.png",
+            "systemtags": [
+                {
+                    "title": "Frontend",
+                    "desc": "Next.js + React Native"
+                },
+                {
+                    "title": "Backend",
+                    "desc": "Express.js REST API"
+                },
+                {
+                    "title": "Database",
+                    "desc": "MongoDB"
                 }
             ]
         }

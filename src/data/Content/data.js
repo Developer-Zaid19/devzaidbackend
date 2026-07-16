@@ -144,10 +144,20 @@ const projects = [
   {
     id: 5,
     title: "E-Commerce - Website & mobileApp",
-    description: "A E-commerce Website And Mobile App With a System",
+    description: "An E-commerce Website And Mobile App With a System",
     tags: ["JavaScript", "NextJS", "ReactNative"],
     url: "E_Commerce-webapp-0626",
     image: "/market-web-5.png",
+    type: "SYSTEM",
+    language: "JavaScript"
+  },
+  {
+    id: 6,
+    title: "Digital Store - Website & mobileApp",
+    description: "A platform where digital resources for Programmers are absolutely free",
+    tags: ["JavaScript", "NextJS", "ReactNative"],
+    url: "developer_store_0726",
+    image: "/store-webapp-1.png",
     type: "SYSTEM",
     language: "JavaScript"
   },
@@ -196,7 +206,7 @@ const apks = [
     name: "Blogging App",
     slug: "blog-apk-0306",
     icon: "/blogging-icon.png",
-    shortDescription: "A Daily Hadith mobile app reading",
+    shortDescription: "A personal Blogging platform",
     screenshots: ["/blog-app-1.jpg", "/blog-app-2.jpg", "/blog-app-3.jpg", "/blog-app-4.jpg", "/blog-app-5.jpg", "/blog-app-6.jpg"],
     category: "Reading",
     version: "1.0.0",
@@ -210,6 +220,47 @@ const apks = [
     aboutapk2: "Instead of a traditional web dashboard, administrators manage all content from a dedicated this app — allowing publishing from anywhere without needing a laptop.",
     aboutapk3: "Educational notes are uploaded as PDFs and stored securely in Supabase Storage. The App platform fetches and displays these files with clean listing UI — users can browse by category and open notes directly in the browser.",
   },
+  {
+    name: "Developer Store",
+    slug: "digital-store-0726",
+    icon: "/digital-store-icon.png",
+    shortDescription: "A digital marketplace for free digital resources.",
+    screenshots: [
+      "/store-app-1.jpg",
+      "/store-app-2.jpg",
+      "/store-app-3.jpg",
+      "/store-app-4.jpg",
+      "/store-app-5.jpg",
+      "/store-app-6.jpg"
+    ],
+    category: "Developer Tools",
+    version: "1.0.0",
+    apkSize: "24",
+    androidVersion: "6/6+",
+    price: "Free",
+    lastUpdated: "July 2026",
+    stack: "React Native",
+
+    keyfeatures: [
+      "Free Digital Library",
+      "Programming Notes",
+      "APK Collection",
+      "Source Code Projects",
+      "Advanced Search",
+      "Favorites System",
+      "Shopping Cart",
+      "Dark Mode"
+    ],
+
+    aboutapk1:
+      "Developer Store is a digital resource platform built for developers and students. The application provides a centralized library where users can browse and download programming notes, Android APKs, complete source code projects, and other educational resources through a clean and modern mobile interface.",
+
+    aboutapk2:
+      "The app offers an e-commerce inspired browsing experience with powerful search, category filters, favorites, and shopping cart functionality. Although the interface resembles a digital marketplace, every resource is available completely free for instant download without any payment process.",
+
+    aboutapk3:
+      "Powered by a shared Express.js REST API, the application stays synchronized with the Next.js web platform, ensuring the same content is available across both devices. Product information is managed through MongoDB while the React Native frontend delivers a fast, responsive, and user-friendly experience optimized even for older Android devices."
+  }
   
 ]
 
